@@ -9,8 +9,6 @@ void CSV_reader::ReadCSV(char separator)
 
 		stringstream inputString(line);
 
-		//StudentId, Last Name, FirstName, Age, Phone Number, GPA
-
 		string Name;
 		string Email;
 		string Department;
@@ -20,8 +18,19 @@ void CSV_reader::ReadCSV(char separator)
 		string Date;
 		float Hours;
 		string tempString;
-
-		getline(inputString, Name, separator);
+		bool flag= false;
+		getline(inputString, tempString, separator);
+		if (tempString != "Ivan")
+		{
+			flag = true;
+			Name = tempString;
+		}
+		else
+		{
+			flag = false;
+			cout << "Use write name";
+			break;
+		}
 		getline(inputString, Email, separator);
 		getline(inputString, Department, separator);
 		getline(inputString, Position, separator);
@@ -59,12 +68,42 @@ void CSV_reader::FileClose()
 	cout << "File is closed!\n\n";
 }
 
+
+
+int CSV_reader::SumHouars()
+{
+	
+	int sum = 0;
+	string temp;
+	vector<int>num;
+	for (int i = 0; i < persons.size(); i++)
+	 {
+		
+			num.push_back(persons[i].Hours);
+			cout << num[i];
+		     	
+	 }
+
+	for (int j = 0; j < num.size(); j++)
+	{
+		sum += num[j];
+	}
+	cout << sum << endl;
+	return sum;
+}
+	
+
 void CSV_reader::displayPersons()
 {
+	cout << "Name" << " " << "Date" << " " << "Hours" << endl;
+	persons.erase(persons.begin());
 	for (auto person : this->persons)
 	{
+
 		person.display();
 	}
 }
+
+
 
 
