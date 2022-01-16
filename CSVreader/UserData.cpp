@@ -29,14 +29,14 @@ struct UserData
 
 	void display() 
 	{
-		cout << "   Name: " << Name << endl;
-		cout << "   Email: " << Email << endl;
-		cout << "   Department: " << Department << endl;
-		cout << "   Position: " << Position << endl;
-		cout << "   Project: " << Project << endl;
-		cout << "   Task: " << Task << endl;
-		cout << "   Date: " << Date << endl;
-		cout << "   Hours: " << Hours << endl;
+		cout << Name << endl;
+		cout << Email << endl;
+		cout << Department << endl;
+		cout << Position << endl;
+		cout <<  Project << endl;
+		cout << Task << endl;
+		cout << Date << endl;
+		cout << Hours << endl;
 		cout << endl;
 	}
 
